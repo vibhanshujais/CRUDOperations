@@ -1,3 +1,7 @@
 from django.contrib import admin
+from cruds.models import detail
 
-# Register your models here.
+class details:
+    data = ()
+
+admin.site.register(detail, details)
