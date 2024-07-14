@@ -3,5 +3,7 @@ from cruds.models import detail
 
 def home(request):
     ob = detail.objects.all()
-    print(ob)
+    if ob:
+        print(ob)
+
     return render(request, 'home.html')
