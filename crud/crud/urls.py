@@ -21,4 +21,6 @@ from crud import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
+    path('detail_page', views.detail_page),
+    
 ]
