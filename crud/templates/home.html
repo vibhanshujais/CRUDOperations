@@ -145,7 +145,7 @@
         <a href="detail_page"><button id="read-btn">Show All Details</button></a>
     </header>
     <div class="register-form">
-        <form class="conform" method="post" action="">
+        <form class="conform" method="post" action="/">
             {% csrf_token %}
             <p class="title">Add Details</p>
             <label>
@@ -165,11 +165,11 @@
                 <span>Section</span>
             </label>
             <label>
-                <input class="input" type="number" placeholder="" required="" id="year">
+                <input class="input" type="number" placeholder="" required="" id="year" name="year">
                 <span>Year</span>
             </label>
             <label>
-                <input class="input" type="date" placeholder="" required="" id="dob">
+                <input class="input" type="date" placeholder="" required="" id="dob" name="dob">
                 <span>DOB</span>
             </label>
             <button class="submit" >Add</button>
