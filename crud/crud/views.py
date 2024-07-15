@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from cruds.models import detail
 
 def home(request):
@@ -21,8 +21,19 @@ def detail_page(request):
         x=[]
         for i in ob:
             x.append(i)
-    return render(request, 'detail_page.html', {'key':x})
+        return render(request, 'detail_page.html', {'key':x})
+    return render(request, 'detail_page.html')
 
 
 def update_record(request,email):
-    return render(request, 'update_detail.html')
+    ob = detail.objects.get(email_id=email)
+    x=[]
+    for i in ob:
+        x.append(i)
+    return render(request, 'update_detail.html', {'key':x})
+
+
+def delete_record(request, email):
+    ob  = detail.objects.filter(email_id = email)
+    ob.delete()
+    return redirect('/detail_page')

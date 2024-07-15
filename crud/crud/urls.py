@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('detail_page', views.detail_page),
-    path('update_record/<email>', views.update_record, name='update_record')
+    path('update_record/<email>', views.update_record, name='update_record'),
+    path('detail_page/<email>',views.delete_record, name='delete_record'),
 ]
