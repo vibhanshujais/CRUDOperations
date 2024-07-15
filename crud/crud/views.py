@@ -26,7 +26,7 @@ def detail_page(request):
 
 
 def update_record(request,email):
-    ob = detail.objects.get(email_id=email)
+    ob = detail.objects.filter(email_id=email)
     x=[]
     for i in ob:
         x.append(i)
@@ -36,4 +36,4 @@ def update_record(request,email):
 def delete_record(request, email):
     ob  = detail.objects.filter(email_id = email)
     ob.delete()
-    return redirect('/detail_page')
+    return render(request, 'detail_page')

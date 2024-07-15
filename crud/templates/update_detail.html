@@ -6,6 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Section</th>
+            <th>Year</th>
+            <th>Email</th>
+        </tr>
+        {% for i in key %}
+        <tr>
+            <td><input type="text" value="{{i.name}}"></td>
+            <td><input type="text" value="{{i.branch}}"></td>
+            <td><input type="text" value="{{i.section}}"></td>
+            <td><input type="text" value="{{i.year}}"></td>
+            <td><input type="text" value="{{i.email_id}}"></td>
+            <td><a href="{%  %}"><button>Save Changes</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
