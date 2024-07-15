@@ -135,17 +135,14 @@
         .submit:hover {
           background-color: #00bfff96;
         }
-    
-        
       </style>
-
 </head>
 <body>
     <header>
         <a href="detail_page"><button id="read-btn">Show All Details</button></a>
     </header>
     <div class="register-form">
-        <form class="conform" method="post" action="/">
+        <form class="conform" method="post" action=" ">
             {% csrf_token %}
             <p class="title">Add Details</p>
             <label>
@@ -161,54 +158,18 @@
                 <span>Branch</span>
             </label>
             <label>
-                <input class="input" type="text" placeholder="" required="" name="section" id="section">
+                <input class="input" type="text" placeholder="" required="" name="section">
                 <span>Section</span>
             </label>
             <label>
-                <input class="input" type="number" placeholder="" required="" id="year" name="year">
+                <input class="input" type="number" placeholder="" required="" name="year">
                 <span>Year</span>
             </label>
             <label>
-                <input class="input" type="date" placeholder="" required="" id="dob" name="dob">
+                <input class="input" type="date" placeholder="" required="" name="dob">
                 <span>DOB</span>
             </label>
             <button class="submit" >Add</button>
         </form>
-    
-    <!-- </div>
-        <section id="read-section">
-            <table id="records-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="records-tbody">
-                </tbody>
-            </table>
-        </section> -->
-    
-        <!-- <section id="update-section">
-            <form id="update-form">
-                <label for="update-name">Name:</label>
-                <input type="text" id="update-name" name="update-name"><br><br>
-                <label for="update-email">Email:</label>
-                <input type="email" id="update-email" name="update-email"><br><br>
-                <label for="update-phone">Phone:</label>
-                <input type="tel" id="update-phone" name="update-phone"><br><br>
-                <button id="update-btn">Save Changes</button>
-            </form>
-        </section>
-        <section id="delete-section">
-            <p id="delete-msg">Are you sure you want to delete this record?</p>
-            <button id="delete-confirm-btn">Delete</button>
-        </section>
-        <footer>    
-            <p id="message"></p>
-        </footer> -->
     </body>
 </html>

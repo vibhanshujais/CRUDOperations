@@ -2,20 +2,32 @@ from django.shortcuts import render, redirect
 from cruds.models import detail
 
 def home(request):
-    data = request.POST
-    if request.method == 'POST':
-        name = data.get('name')
-        email_id = data.get('email')
-        branch = data.get('branch')
-        section = data.get('section')
-        year = data.get('year')
-        dob = data.get('dob')
-        ob = detail(name=name, email_id=email_id, branch=branch, section=section, year=year, dob=dob)
-        ob.save()
-    return render(request, 'home.html')
+    try:
+        data = request.POST
+        if request.method == 'POST':
+            name = data.get('name')
+            email_id = data.get('email')
+            branch = data.get('branch')
+            section = data.get('section')
+            year = data.get('year')
+            dob = data.get('dob')
+            ob = detail(name=name, email_id=email_id, branch=branch, section=section, year=year, dob=dob)
+            ob.save()
+        return render(request, 'home.html')
+    except:
+        return redirect('/')
 
 
 def detail_page(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email_id = request.POST.get('email')
+        branch = request.POST.get('branch')
+        year = request.POST.get('year')
+        section = request.POST.get('section')
+        dob = request.POST.get('dob')
+        ob = detail.objects.filter(email_id=email_id)
+        ob = ob.update(name=name, branch=branch, section=section, year=year, dob=dob, email_id=email_id)
     ob = detail.objects.all()
     if ob:
         x=[]

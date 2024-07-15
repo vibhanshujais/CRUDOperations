@@ -12,17 +12,22 @@
             <th>Branch</th>
             <th>Section</th>
             <th>Year</th>
+            <th>DOB</th>
             <th>Email</th>
         </tr>
         {% for i in key %}
-        <tr>
-            <td><input type="text" value="{{i.name}}"></td>
-            <td><input type="text" value="{{i.branch}}"></td>
-            <td><input type="text" value="{{i.section}}"></td>
-            <td><input type="text" value="{{i.year}}"></td>
-            <td><input type="text" value="{{i.email_id}}"></td>
-            <td><a href="{%  %}"><button>Save Changes</button></a></td>
-        </tr>
+        <form action="/detail_page" method="post">
+            {% csrf_token %}
+            <tr>
+                <td><input type="text" name="name" value="{{i.name}}"></td>
+                <td><input type="text" name="branch" value="{{i.branch}}"></td>
+                <td><input type="text" name="section" value="{{i.section}}"></td>
+                <td><input type="text" name="year" value="{{i.year}}"></td>
+                <td><input type="date" name="dob" value="{{i.dob|date:"Y-m-d" }}"></td>
+                <td><input type="text" name="email" value="{{i.email_id}}"></td>
+                <td><button type="submit">Save Changes</button></td>
+            </tr>
+        </form>
         {% endfor %}
     </table>
 </body>
