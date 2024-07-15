@@ -22,3 +22,7 @@ def detail_page(request):
         for i in ob:
             x.append(i)
     return render(request, 'detail_page.html', {'key':x})
+
+
+def update_record(request,email):
+    return render(request, 'update_detail.html')

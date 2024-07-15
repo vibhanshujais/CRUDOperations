@@ -21,7 +21,7 @@
             <td>{{i.section}}</td>
             <td>{{i.year}}</td>
             <td>{{i.email_id}}</td>
-            <td><button>Update</button></td>
+            <td><a href="{% url 'update_record' email=i.email_id %}"><button>Update</button></a></td>
             <td><button>Delete</button></td>
         </tr>
         {% endfor %}
