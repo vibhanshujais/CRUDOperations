@@ -48,4 +48,4 @@ def update_record(request,email):
 def delete_record(request, email):
     ob  = detail.objects.filter(email_id = email)
     ob.delete()
-    return render(request, 'detail_page')
+    return redirect('/')

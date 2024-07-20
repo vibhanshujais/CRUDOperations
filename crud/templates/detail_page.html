@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="/"><button>ADD DETAILS</button></a>
     <table>
         <tr>
             <th>Name</th>
@@ -13,6 +14,7 @@
             <th>Section</th>
             <th>Year</th>
             <th>Email</th>
+            <th>DOB</th>
         </tr>
         {% for i in key %}
         <tr>
@@ -21,6 +23,7 @@
             <td>{{i.section}}</td>
             <td>{{i.year}}</td>
             <td>{{i.email_id}}</td>
+            <td>{{i.dob|date:"d-m-Y"}}</td>
             <td><a href="{% url 'update_record' email=i.email_id %}"><button>Update</button></a></td>
             <td><a href="{% url 'delete_record' email=i.email_id %}"><button>Delete</button></a></td>
         </tr>
